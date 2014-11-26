@@ -1,0 +1,46 @@
+@import url("bootstrap.css");
+
+iframe{
+width:100px;
+height:100px;
+}
+
+button.action{
+color:white;
+background-color:black;
+width:80px;
+height:80px;
+}
+
+img{
+width:80px;
+height:70px;
+}
+
+div.login{
+ height:100px;
+ width:500px;
+ margin:auto;
+ position:relative;
+ text-align:center;
+}
+
+div.registration{
+background-color:orange;
+ height:100px;
+ width:500px;
+ margin:auto;
+ position:relative;
+ text-align:center;
+}
+
+div.user_info{
+
+ height:300px;
+ width:500px;
+ margin:auto;
+ position:relative;
+ text-align:center;
+ display:block;
+}
+

@@ -1,0 +1,58 @@
+iframe{
+width:100px;
+height:100px;
+}
+
+button{
+color:white;
+background-color:black;
+width:80px;
+height:80px;
+}
+
+div.display{
+display:flex;
+width:400px;
+padding:30px;
+}
+
+div.machine{
+float:clear;
+}
+
+img{
+width:80px;
+height:70px;
+}
+
+
+input.status{
+display:none;
+}
+
+div.slot_screen{
+width:100px;
+height:80px;
+background-color:pink;
+overflow:hidden;
+}
+
+div.win{
+-webkit-animation:myfirst 0.7s infinite; /* Chrome, Safari, Opera */
+animation:myfirst 0.7s infinite;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst
+{
+from {background-color:green;}
+to {background-color:yellow;}
+}
+
+/* Standard syntax */
+@keyframes myfirst
+{
+from {background-color:green;}
+to {background-color:yellow;}
+}

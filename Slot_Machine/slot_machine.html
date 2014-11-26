@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="slot_machine.css" title="style1"/>
+
+</head>
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script src="slot_machine.js"></script>
+
+<body>
+
+
+
+ <form action="" method="post"> 
+ 
+	<div class="display">
+	
+	<div class="slot_screen" id="slot_1"> 
+	     <img class="apple" src="fruit//apple.png"/> </br>
+		<img class="cherry" src="fruit//cherry.png"/> </br>
+		<img class="grapes" src="fruit//grapes.png"/> </br>
+		<img class="lemon" src="fruit//lemon.png"/> </br>
+		<img class="orange" src="fruit//orange.png"/> </br>
+		<img class="pear" src="fruit//pear.png"/> </br>
+		<img class="watermelon" src="fruit//watermelon.png" />
+    </div>
+    
+	
+	<div class="slot_screen" id="slot_2"> 
+	     <img class="apple" src="fruit//apple.png"/> </br>
+		<img class="cherry" src="fruit//cherry.png"/> </br>
+		<img class="grapes" src="fruit//grapes.png"/> </br>
+		<img class="lemon" src="fruit//lemon.png"/> </br>
+		<img class="orange" src="fruit//orange.png"/> </br>
+		<img class="pear" src="fruit//pear.png"/> </br>
+		<img class="watermelon" src="fruit//watermelon.png" />
+    </div>
+	
+	
+	<div class="slot_screen" id="slot_3"> 
+	     <img class="apple" src="fruit//apple.png"/> </br>
+		<img class="cherry" src="fruit//cherry.png"/> </br>
+		<img class="grapes" src="fruit//grapes.png"/> </br>
+		<img class="lemon" src="fruit//lemon.png"/> </br>
+		<img class="orange" src="fruit//orange.png"/> </br>
+		<img class="pear" src="fruit//pear.png"/> </br>
+		<img class="watermelon" src="fruit//watermelon.png" />
+    </div>
+
+	
+	<button class="spin_pannel">SPIN</button>
+	</div>
+    <div class="machine">
+	Name: <input type="text" name="name" value=<?php echo $name; ?>> </br>
+    Your Bet: <input type="text" name="bet" value=<?php echo $bet; ?>>
+	Credit: <input type="text" name="credit" value=<?php echo $credit; ?> readonly="true"><br>
+	<input class="status" type="text" name="status" value=<?php echo $status; ?>  readonly="true"><br>
+	</div>
+</form>
+
+
+
+
+</body>
+</html>

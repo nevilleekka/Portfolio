@@ -1,0 +1,105 @@
+@import url("../bootstrap.css");
+
+iframe{
+width:100px;
+height:100px;
+}
+
+button{
+margin:auto; 
+position:relative;
+}
+
+div{
+ position:relative;
+ margin:auto;
+}
+
+div.user_settings{
+ position:relative;
+ margin:auto;
+ width:600px;
+height:300px;
+display:flex;
+}
+
+
+div.user_info{
+background-color:lightblue;
+width:250px;
+height:270px;
+margin:auto;
+display:block;
+
+}
+
+
+div.db_order_list{
+background-color:orange;
+display:block;
+width:300px;
+height:220px;
+margin:auto;
+}
+
+div.db_order_create{
+background-color:gainsboro;
+}
+
+div.db_order_form{
+    display:flex;
+    
+}
+
+div.main{
+background-color:pink;
+ margin:auto;
+ position:relative;
+ text-align:center;
+
+ display:block;
+}
+
+order_tab{	
+width:700px;
+height:140px;
+display:block;
+ background-color:pink;
+ margin:auto;
+}
+
+
+
+div.db_order{
+ display:flex;
+ width:500px; 
+ margin:auto;
+ position:relative;
+
+
+}
+
+div.db_controls{
+ width:200px;
+ position:relative;
+ margin:auto;
+ display:flex;
+}
+
+
+
+form{
+ position:relative;
+ margin:auto;
+
+}
+
+textarea {
+   resize: none;
+}
+p{
+background-color:BlueViolet ;
+padding:2px;
+margin:1px;
+}
+

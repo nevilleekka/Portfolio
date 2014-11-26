@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+	  div.card{
+	  position:absolute;
+	  top:150px;
+	  left:250px;
+	  }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+	<div class="card">
+	<input id="recipient" type="text" value="Recipient">
+	</br>
+	</br>
+	<input id="sender" type="text" value="Sender">
+	</br>
+	<br>
+	<button id="generate" type ="button" onclick=generate_card()>Generate Card</button>
+	</div>
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.1.min.js"></script>
+    <script defer="defer">
+	
+	var card={recipient:"nex",sender:""};
+	
+	function generate_card(){
+	console.log('generated');
+		planet_animation.start();
+	  
+	   wishes_animation.start();
+	   card.recipient=document.getElementById("recipient").value;
+	   card.sender=document.getElementById("sender").value;
+	   document.getElementById("recipient").style.display="none";
+	   document.getElementById("sender").style.display="none";
+	   document.getElementById("generate").style.display="none";
+	   venus.show();
+	   earth.show();
+	   sun.show();
+	   mars.show();
+	}
+	
+	var stars_array=new Array();
+	
+      var stage = new Kinetic.Stage({
+        container: 'container',
+        width: 600,
+        height: 600
+      });
+	  
+	  
+	  var background_layer = new Kinetic.Layer();
+	  var star_group= new Kinetic.Group({
+        x: stage.getWidth()/2,
+        y: stage.getHeight()/2
+      });
+      var planets = new Kinetic.Layer();
+	  var wishes = new Kinetic.Layer();
+	  
+	  var new_radius=0;
+
+      var earth_pic = new Image();
+	  earth_pic.src = 'earth.png';
+
+        var earth = new Kinetic.Image({
+          x: 200,
+          y: 50,
+          image: earth_pic,
+          width: 103/2,
+          height: 98/2
+        }); 
+		earth.hide();
+		
+		var mars_pic = new Image();
+		mars_pic.src = 'mars.png';
+		var mars = new Kinetic.Image({
+          x: 200,
+          y: 50,
+          image: mars_pic,
+          width: 103/2,
+          height: 98/2
+        }); 
+		mars.hide();
+		
+		
+	var venus_pic = new Image();
+		venus_pic.src = 'venus.png';
+		var venus = new Kinetic.Image({
+          x: 200,
+          y: 50,
+          image: venus_pic,
+          width: 103/2,
+          height: 98/2
+        }); 
+		venus.hide();
+		
+		var sun_pic = new Image();
+		sun_pic.src = 'sun.png';
+        var sun = new Kinetic.Image({
+          x: (stage.getWidth()/2)-(103/4),
+          y: (stage.getHeight()/2)-(98/4),
+          image: sun_pic,
+          width: 103/2,
+          height: 98/2
+        });
+		sun.hide();
+		
+	 var today = new Kinetic.Text({
+        x: (stage.getWidth()/2)-(900/2),
+        y: (stage.getHeight()/2),
+        text: 'Today',
+        fontSize: 0,
+        fontFamily: 'Calibri',
+       // fill: 'white',
+	    stroke:'white',
+        width: 900,
+        padding: 20,
+        align: 'center',
+		wrap:'none'
+      });
+	  today.hide();
+	  
+	   var center_of_everything = new Kinetic.Text({
+        x: (stage.getWidth()/2)-(380/2),
+        y: (stage.getHeight()/6),
+        text: 'CENTER\nof\nEVERYTHING',
+        fontSize: 50,
+        fontFamily: 'Calibri',
+        fill: 'white',
+	    stroke:'white',
+        width: 380,
+        padding: 20,
+        align: 'center',
+		wrap:'none'
+      });
+	  center_of_everything.hide();
+		
+		var is = new Kinetic.Text({
+        x: (stage.getWidth()/2)-75,
+        y: (stage.getHeight()/2)-125,
+        text: 'IS',
+        fontSize: 50,
+        fontFamily: 'Calibri',
+        fill: 'yellow',
+	    stroke:'yellow',
+        width: 150,
+        padding: 20,
+        align: 'center',
+		wrap:'none'
+      });
+	  is.hide();
+	  
+	  var recipient = new Kinetic.Text({
+        x: (stage.getWidth()/2)-250,
+        y: (stage.getHeight()/2)-50,
+        text: 'U',
+        fontSize: 50,
+        fontFamily: 'Calibri',
+        fill: 'white',
+	    stroke:'white',
+        width: 500,
+        padding: 20,
+        align: 'center',
+		wrap:'none'
+      });
+	  recipient.hide();
+	  
+	 var sender = new Kinetic.Text({
+        x: (stage.getWidth()/2)-250,
+        y: (stage.getHeight())-100,
+        text: 'From\nMAMA',
+        fontSize: 30,
+        fontFamily: 'Calibri',
+        fill: 'white',
+	    stroke:'orange',
+        width: 500,
+        padding: 20,
+        align: 'center',
+		wrap:'none'
+      });
+	  sender.hide();
+	  
+	  var happy_birthday = new Kinetic.Text({
+        x: (stage.getWidth()/2)-250,
+        y: (stage.getHeight()/2)-200,
+        text: 'HAPPY BIRTHDAY',
+        fontSize: 65,
+        fontFamily: 'Andy',
+        fill: 'white',
+	    stroke:'yellow',
+        width: 500,
+        padding: 20,
+        align: 'center',
+		wrap:'none'
+      });
+	  happy_birthday.hide();
+		
+		starry_background();
+		
+		wishes.add(happy_birthday);
+		wishes.add(recipient);
+		wishes.add(sender);
+		wishes.add(is);
+		wishes.add(today);
+		wishes.add(center_of_everything);
+		
+		planets.add(venus);
+		planets.add(mars);
+        planets.add(earth);
+		planets.add(sun);
+
+        // add the layer to the stage
+		 background_layer.add(star_group);
+		stage.add(background_layer);
+        stage.add(planets);
+		stage.add(wishes);
+		
+		
+      var planet_animation = new Kinetic.Animation(function(frame) {
+	  var earth_x=((60+new_radius)*Math.sin((frame.time/5)* (Math.PI/180))+(stage.getWidth()/2));
+	  var earth_y=((60+new_radius)*Math.cos((frame.time/5)* (Math.PI/180))+(stage.getHeight()/2));
+        earth.setX(earth_x-(earth.width()/2));
+		earth.setY(earth_y-(earth.height()/2));
+		
+	  var sun_x=((new_radius)*Math.sin(((frame.time/5)+90)* (Math.PI/180))+(stage.getWidth()/2));
+	  var sun_y=((new_radius)*Math.cos(((frame.time/5)+90)* (Math.PI/180))+(stage.getHeight()/2));
+        sun.setX(sun_x-(sun.width()/2));
+		sun.setY(sun_y-(sun.height()/2));
+		
+	  var mars_x=((120+new_radius)*Math.sin(((frame.time/8)-50)* (Math.PI/180))+(stage.getWidth()/2));
+	  var mars_y=((120+new_radius)*Math.cos(((frame.time/8)-50)* (Math.PI/180))+(stage.getHeight()/2));
+        mars.setX(mars_x-(mars.width()/2));
+		mars.setY(mars_y-(mars.height()/2));
+		
+	var venus_x=((200+new_radius)*Math.sin(((frame.time/10)+20)* (Math.PI/180))+(stage.getWidth()/2));
+	  var venus_y=((200+new_radius)*Math.cos(((frame.time/10)+20)* (Math.PI/180))+(stage.getHeight()/2));
+        venus.setX(venus_x-(venus.width()/2));
+		venus.setY(venus_y-(venus.height()/2));
+		
+      }, planets);
+      
+	  
+	  
+	  var background_animation = new Kinetic.Animation(function(frame) {
+		stars_array[frame.time%(stars_array.length-1)].setX(Math.floor((Math.random()*stage.getWidth())-(stage.getWidth()/2)));
+        stars_array[frame.time%(stars_array.length-1)].setY(Math.floor((Math.random()*stage.getHeight())-(stage.getHeight()/2))) ;
+console.log(Math.floor((Math.random()*stage.getWidth())));
+		}, background_layer);
+		 background_animation.start();
+		
+		
+		 var background_animation_old_time=0;
+	  var wishes_animation = new Kinetic.Animation(function(frame) {
+	   if(today.fontSize()<50){today.show();};
+	  if(today.fontSize()<2000){today.fontSize(frame.time/10);}
+	  if(frame.time>2500 && frame.time<2600){today.hide();}
+	   if(frame.time>3000 && frame.time<3100 ){background_animation_old_time=frame.time;}
+	  if(frame.time>3100 && frame.time<5000){ center_of_everything.show();center_of_everything.scale({y:Math.max(1,5-((frame.time-background_animation_old_time)/200))});}//
+	  if(frame.time>5500 && frame.time<5600){is.show();center_of_everything.setY(center_of_everything.getY()-30);}
+		
+			if(frame.time>6000 && frame.time<6200){new_radius=80;recipient.show();recipient.setText(card.recipient);}
+			if(frame.time>7000 && frame.time<7500){is.hide();center_of_everything.hide();happy_birthday.show();recipient.setText(card.recipient);sender.setText('From\n'+card.sender);sender.show();}
+		 
+      }, wishes);
+     
+	 
+	  
+	  function starry_background(){
+	  var black_bg = new Kinetic.Circle({
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0,
+		radius:450,
+        fill: 'black',
+        stroke: 'black',
+        strokeWidth: 0
+      });
+	  star_group.add(black_bg)
+	 	  for(var i=0;i<100;i++){
+	  var star = new Kinetic.Circle({
+        x: Math.floor((Math.random()*stage.getWidth())-(stage.getWidth()/2)),
+        y: Math.floor((Math.random()*stage.getHeight())-(stage.getHeight()/2)),
+        width: 0,
+        height: 0,
+		radius:0.5,
+        fill: 'white',
+        stroke: 'white',
+        strokeWidth: 0
+      });
+	  stars_array.push(star);
+	  star_group.add(star);
+
+	  }
+
+	  
+	  }
+	  
+
+    </script>
+  </body>
+</html>

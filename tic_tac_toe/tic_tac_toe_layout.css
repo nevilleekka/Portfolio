@@ -1,0 +1,76 @@
+
+p.x{
+font-size:300%;
+text-shadow:2px 2px 5px black;
+text-transform:uppercase;
+font-weight:900px;
+margin:0px;
+color:red;
+}
+
+p.o{
+font-size:300%;
+text-shadow:2px 2px 5px black;
+text-transform:uppercase;
+font-weight:900px;
+margin:0px;
+color:blue;
+}
+
+div.square{
+height:60px;
+width:60px;
+position:relative;
+float:left;
+text-align:center;
+}
+
+#sq1{
+border-right:thick solid grey;
+border-bottom:thick solid grey;
+}
+
+#sq2{
+border-left:thick solid grey;
+border-right:thick solid grey;
+border-bottom:thick solid grey;
+}
+
+#sq3{
+border-left:thick solid grey;
+border-bottom:thick solid grey;
+}
+
+#sq4{
+border-top:thick solid grey;
+border-right:thick solid grey;
+border-bottom:thick solid grey;
+}
+
+#sq5{
+border:thick solid grey;
+}
+
+#sq6{
+border-top:thick solid grey;
+border-left:thick solid grey;
+border-bottom:thick solid grey;
+}
+
+#sq7{
+border-top:thick solid grey;
+border-right:thick solid grey;
+
+}
+
+#sq8{
+border-top:thick solid grey;
+border-left:thick solid grey;
+border-right:thick solid grey;
+}
+
+#sq9{
+border-top:thick solid grey;
+border-left:thick solid grey;
+
+}
